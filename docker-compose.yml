@@ -1,0 +1,20 @@
+services:
+  qa-service:
+    build: .
+    container_name: qa-service
+    restart: unless-stopped
+    env_file:
+      - .env
+    environment:
+      # Use an on-disk persistent ChromaDB store inside the container,
+      # backed by the chroma_data volume below.
+      VECTOR_STORE_URL: /app/.chroma
+    ports:
+      - "8000:8000"
+    volumes:
+      - chroma_data:/app/.chroma
+      - hf_cache:/app/.hf_cache
+
+volumes:
+  chroma_data:
+  hf_cache:

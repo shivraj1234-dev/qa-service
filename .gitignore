@@ -1,0 +1,20 @@
+.env
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.coverage
+htmlcov/
+coverage.xml
+dist/
+build/
+.chroma/
+.hf_cache/
+*.log
+
+# Office temp lock files
+~$*
